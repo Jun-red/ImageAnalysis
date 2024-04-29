@@ -24,11 +24,9 @@
 ## QLineEdit 样式表configure
     https://blog.csdn.net/qq_21449473/article/details/104020101
 
-## package-dependency
-    numpy
-    pyqt5
-    pyqt5-tools
-    pyinstaller
-    pillow
+## icons
+    https://www.flaticon.com/
+    https://www.iconfinder.com/
+    https://fontawesome.com/
 
 
