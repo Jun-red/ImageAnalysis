@@ -341,7 +341,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "星遥光宇（常州）科技有限公司"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "有限公司"))
         self.guide_video.setText(_translate("MainWindow", " *VideoAnalysis\n"
 "\n"
 " *在线视频分析功能"))
