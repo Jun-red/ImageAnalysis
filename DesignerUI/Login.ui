@@ -23,15 +23,15 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>LOGIN</string>
   </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>80</x>
+     <x>90</x>
      <y>30</y>
-     <width>131</width>
-     <height>121</height>
+     <width>121</width>
+     <height>111</height>
     </rect>
    </property>
    <property name="text">
@@ -41,7 +41,7 @@
     <enum>Qt::AutoText</enum>
    </property>
    <property name="pixmap">
-    <pixmap>../images/user_profile.png</pixmap>
+    <pixmap>../images/rocket_48x48.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>

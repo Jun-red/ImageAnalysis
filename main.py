@@ -15,22 +15,12 @@ sys.path.append(os.path.join(PROJ_DIR, 'script'))
 sys.path.append(os.path.join(PROJ_DIR, 'tools'))
 sys.path.append(os.path.join(PROJ_DIR, 'images'))
 
-from GuideUI.LoginUI import login
-
-class Guide(qw.QMainWindow):
-    def __init__(self):
-        super().__init__()
-        # self.setupUi(self)  
-
-        self.login = login.Login()
+from GuideUI import guide
 
 
 if __name__ == '__main__':
     print('Weclome to MAIN')
     app = qw.QApplication([])
-
-    mainUI = Guide()
-    mainUI.login.show()
-    # mainUI.show()
-
+    mainUI = guide.Guide()
+    mainUI.show()
     sys.exit(app.exec_())

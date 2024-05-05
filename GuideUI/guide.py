@@ -1,0 +1,100 @@
+import sys
+import PyQt5.QtWidgets as qw
+import PyQt5.QtCore as qc
+
+from DesignerUI.PyUI import Ui_Guide
+from GuideUI.LoginUI import login
+from common import TimeChange
+from script import mygit
+
+class Guide(qw.QMainWindow, Ui_Guide.Ui_MainWindow):
+    def __init__(self):
+        super().__init__()
+        self.setupUi(self)  
+
+        self.login = login.Login()
+        
+
+        self.guide_switch = {
+            0: self.on_guide_home_cb,
+            1: self.on_guide_user_cb,
+            2: self.on_guide_github_cb,
+            3: self.on_guide_phone_cb,
+            4: self.on_guide_power_cb,
+        }
+
+        self.CB()
+        self.Init()
+
+    def Init(self):
+        self.guide_user_login.setStyleSheet("background-color: red;")
+        self.guide_user_login.setText("点击登录")
+
+        repo_path = r'C:\Users\12284\Desktop\GitHub\ImageAnalysis'
+        branch_name = 'ui_dev'
+        changelog_path = r'C:\Users\12284\Desktop\GitHub\ImageAnalysis\ChangeLog.md'
+        self.mygit = mygit.MyGitManager(repo_path, branch_name, changelog_path)
+
+        self.guide_github_url.setText(str(self.mygit.repo_path))
+        self.guide_github_branch.setText(str(self.mygit.branch_name))
+        self.guide_github_version.setText(str(self.mygit.changelog))
+        
+
+    def CB(self):
+        self.guide.currentChanged.connect(self.on_guide_cb)
+
+        self.guide_video.clicked.connect(self.on_guide_video_cb)
+        self.guide_image.clicked.connect(self.on_guide_image_cb)
+        self.guide_netword.clicked.connect(self.on_guide_network_cb)
+        self.guide_lidar.clicked.connect(self.on_guide_lidar_cb)
+        self.guide_serial.clicked.connect(self.on_guide_serial_cb)
+
+        self.guide_user_login.clicked.connect(self.on_guide_user_login_in_cb)
+        self.login.login_flag.connect(self.on_guide_flag_cb)
+        self.login.login_time.connect(self.on_guide_time_cb)
+    def on_guide_cb(self):
+        cur_tab = self.guide.currentIndex()
+        self.guide_switch.get(cur_tab)()
+
+    # < 导航界面--Guide-UI > #
+    def on_guide_home_cb(self):
+        pass
+    def on_guide_user_cb(self):
+        pass
+    def on_guide_github_cb(self):
+        print("on_guide_github_cb")
+    def on_guide_phone_cb(self):
+        print("on_guide_phone_cb")
+    def on_guide_power_cb(self):
+        print("on_guide_power_cb")
+    
+    # < tab1 > # 
+    def on_guide_video_cb(self):
+        print("on_guide_video_cb")
+    def on_guide_image_cb(self):
+        print("on_guide_image_cb")
+    def on_guide_network_cb(self):
+        print("on_guide_network_cb")
+    def on_guide_lidar_cb(self):
+        print("on_guide_lidar_cb")
+    def on_guide_serial_cb(self):
+        print("on_guide_serial_cb")
+    
+    # <tab 2> #
+    def on_guide_user_login_in_cb(self):
+        if self.login.flag:
+            self.guide_user_login.setStyleSheet("background-color: red;")
+            self.guide_user_login.setText("点击登录")
+            self.login.close()
+            self.login.flag = False
+        else:
+            self.login.show()
+    def on_guide_flag_cb(self, value):
+        if value:
+            self.guide_user_login.setText("退出登录")
+            self.guide_user_login.setStyleSheet("background-color: green;")
+            self.guide_user_name.setText(self.login.login_user_name)
+            self.login.close()
+    def on_guide_time_cb(self, value):
+        str_time = TimeChange.seconds_to_hms(value)
+        self.guide_user_time.setText(str_time)

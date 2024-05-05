@@ -12,6 +12,9 @@
 ## Git Bash
     https://zhuanlan.zhihu.com/p/123195804
 
+## Git token(gitkraken)
+    https://blog.csdn.net/qq_37255976/article/details/134558484
+
 ## node.js & npm
     https://zhuanlan.zhihu.com/p/96632417
 
@@ -28,7 +31,5 @@
     https://www.flaticon.com/
     https://www.iconfinder.com/
     https://fontawesome.com/
-
-    test
 
 

@@ -18,10 +18,10 @@ class Ui_Form(object):
         Form.setMinimumSize(QtCore.QSize(300, 400))
         Form.setMaximumSize(QtCore.QSize(300, 400))
         self.label = QtWidgets.QLabel(Form)
-        self.label.setGeometry(QtCore.QRect(80, 30, 131, 121))
+        self.label.setGeometry(QtCore.QRect(90, 30, 121, 111))
         self.label.setText("")
         self.label.setTextFormat(QtCore.Qt.AutoText)
-        self.label.setPixmap(QtGui.QPixmap("c:\\Users\\12284\\Desktop\\GitHub\\ImageAnalysis\\DesignerUI\\../images/user_profile.png"))
+        self.label.setPixmap(QtGui.QPixmap("c:\\Users\\12284\\Desktop\\GitHub\\ImageAnalysis\\DesignerUI\\../images/rocket_48x48.png"))
         self.label.setScaledContents(True)
         self.label.setWordWrap(True)
         self.label.setObjectName("label")
@@ -85,7 +85,7 @@ class Ui_Form(object):
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "Form"))
+        Form.setWindowTitle(_translate("Form", "LOGIN"))
         self.login_name.setPlaceholderText(_translate("Form", " input your name"))
         self.login_password.setPlaceholderText(_translate("Form", " input password"))
         self.login_in.setText(_translate("Form", "Login"))
