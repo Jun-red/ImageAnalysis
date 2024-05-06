@@ -7,13 +7,14 @@ from GuideUI.LoginUI import login
 from common import TimeChange
 from script import mygit
 
+
 class Guide(qw.QMainWindow, Ui_Guide.Ui_MainWindow):
     def __init__(self):
         super().__init__()
         self.setupUi(self)  
 
         self.login = login.Login()
-        
+        self.function_set= [0] * 5 # video image lidar serial network         
 
         self.guide_switch = {
             0: self.on_guide_home_cb,
@@ -39,6 +40,7 @@ class Guide(qw.QMainWindow, Ui_Guide.Ui_MainWindow):
         self.guide_github_branch.setText(str(self.mygit.branch_name))
         self.guide_github_version.setText(str(self.mygit.changelog))
         
+
 
     def CB(self):
         self.guide.currentChanged.connect(self.on_guide_cb)
@@ -69,16 +71,41 @@ class Guide(qw.QMainWindow, Ui_Guide.Ui_MainWindow):
         print("on_guide_power_cb")
     
     # < tab1 > # 
+    def FunctionClickedEvent(self):
+        ret = False
+        if not self.login.flag :
+            qw.QMessageBox.critical(None, "ERROR", "请先完成登录!", qw.QMessageBox.Ok)
+            self.function_set = [0 for _ in self.function_set]
+        elif sum(self.function_set) != 0:
+            qw.QMessageBox.critical(None, "ERROR", "后台已有服务开启", qw.QMessageBox.Ok)
+        else:
+            ret = not ret
+        return ret
     def on_guide_video_cb(self):
-        print("on_guide_video_cb")
+        if  not self.FunctionClickedEvent():
+            return
+        else:
+            self.function_set[0] = 1
     def on_guide_image_cb(self):
-        print("on_guide_image_cb")
+        if  not self.FunctionClickedEvent():
+            return
+        else:
+            self.function_set[1] = 1
     def on_guide_network_cb(self):
-        print("on_guide_network_cb")
+        if  not self.FunctionClickedEvent():
+            return
+        else:
+            self.function_set[2] = 1
     def on_guide_lidar_cb(self):
-        print("on_guide_lidar_cb")
+        if  not self.FunctionClickedEvent():
+            return
+        else:
+            self.function_set[3] = 1
     def on_guide_serial_cb(self):
-        print("on_guide_serial_cb")
+        if  not self.FunctionClickedEvent():
+            return
+        else:
+            self.function_set[4] = 1
     
     # <tab 2> #
     def on_guide_user_login_in_cb(self):

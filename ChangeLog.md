@@ -1,6 +1,9 @@
 
 # Version
 
+## version:[0.0.3] date:2024-05-06
+[*] Optimize the operation logic of the click interface
+[+] add .gitignore
 
 ## version:[0.0.2] date:2024-05-05
 [+] Development of navigation interface
