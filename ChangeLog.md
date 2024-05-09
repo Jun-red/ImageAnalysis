@@ -1,6 +1,10 @@
 
 # Version
 
+## version:[0.0.5] date:2024-05-09
+[!] Fix the bug of running feedback git
+[!] Fix the bug that no icon is displayed when running
+
 ## version:[0.0.4] date:2024-05-09
 [*] Determine the UI of the video project
 [!] Try using the QT graphics framework

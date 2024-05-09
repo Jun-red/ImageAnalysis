@@ -1,3 +1,5 @@
+import os
+os.environ["GIT_PYTHON_REFRESH"] = "quiet"
 import git
 from common import MyFile
 
@@ -28,4 +30,5 @@ class MyGitManager:
         # print("Url:", url)
         # print("branch:", _)
         # print("Latest commit time:", latest_commit_time)
+
 

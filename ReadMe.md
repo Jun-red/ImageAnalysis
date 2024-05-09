@@ -41,6 +41,13 @@
 ## QT界面--如何调整控件在整个界面中所占的比例
     https://blog.csdn.net/guanguanboy/article/details/103636943
 
+## pyinstaller 
+
+### "The git executable must be specified..."
+    https://blog.csdn.net/JiuShu110/article/details/132872982
+### ICON
+    https://www.cnblogs.com/jgg54335/p/14885320.html
+    
 ## icons
     https://www.flaticon.com/
     https://www.iconfinder.com/

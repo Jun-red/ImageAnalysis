@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>912</width>
-    <height>483</height>
+    <height>485</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -26,8 +26,8 @@
    <string>星遥光宇</string>
   </property>
   <property name="windowIcon">
-   <iconset>
-    <normaloff>../images/china.png</normaloff>../images/china.png</iconset>
+   <iconset resource="../images/icon_png.qrc">
+    <normaloff>:/icon/china.png</normaloff>:/icon/china.png</iconset>
   </property>
   <property name="windowOpacity">
    <double>2.000000000000000</double>
@@ -56,8 +56,8 @@
       </property>
       <widget class="QWidget" name="guide_home">
        <attribute name="icon">
-        <iconset>
-         <normaloff>../images/home2 - 副本.png</normaloff>../images/home2 - 副本.png</iconset>
+        <iconset resource="../images/icon_png.qrc">
+         <normaloff>:/icon/home2 - 副本.png</normaloff>:/icon/home2 - 副本.png</iconset>
        </attribute>
        <attribute name="title">
         <string/>
@@ -191,8 +191,8 @@ text-align: left;</string>
  *在线视频分析功能</string>
               </property>
               <property name="icon">
-               <iconset>
-                <normaloff>../images/video-camera.png</normaloff>../images/video-camera.png</iconset>
+               <iconset resource="../images/icon_png.qrc">
+                <normaloff>:/icon/video-camera.png</normaloff>:/icon/video-camera.png</iconset>
               </property>
               <property name="iconSize">
                <size>
@@ -243,8 +243,8 @@ text-align: left;</string>
  *离线图像分析功能</string>
               </property>
               <property name="icon">
-               <iconset>
-                <normaloff>../images/file-video.png</normaloff>../images/file-video.png</iconset>
+               <iconset resource="../images/icon_png.qrc">
+                <normaloff>:/icon/file-video.png</normaloff>:/icon/file-video.png</iconset>
               </property>
               <property name="iconSize">
                <size>
@@ -337,8 +337,8 @@ text-align: left;</string>
  *网络传输调试功能</string>
               </property>
               <property name="icon">
-               <iconset>
-                <normaloff>../images/data-transfer.png</normaloff>../images/data-transfer.png</iconset>
+               <iconset resource="../images/icon_png.qrc">
+                <normaloff>:/icon/data-transfer.png</normaloff>:/icon/data-transfer.png</iconset>
               </property>
               <property name="iconSize">
                <size>
@@ -389,8 +389,8 @@ text-align: left;</string>
  *雷达3D点云可视化</string>
               </property>
               <property name="icon">
-               <iconset>
-                <normaloff>../images/location-crosshairs.png</normaloff>../images/location-crosshairs.png</iconset>
+               <iconset resource="../images/icon_png.qrc">
+                <normaloff>:/icon/location-crosshairs.png</normaloff>:/icon/location-crosshairs.png</iconset>
               </property>
               <property name="iconSize">
                <size>
@@ -474,8 +474,8 @@ text-align: left;</string>
  *串口调试功能</string>
               </property>
               <property name="icon">
-               <iconset>
-                <normaloff>../images/usb-pendrive.png</normaloff>../images/usb-pendrive.png</iconset>
+               <iconset resource="../images/icon_png.qrc">
+                <normaloff>:/icon/usb-pendrive.png</normaloff>:/icon/usb-pendrive.png</iconset>
               </property>
               <property name="iconSize">
                <size>
@@ -513,8 +513,8 @@ text-align: left;</string>
  *RTSP推流服务</string>
               </property>
               <property name="icon">
-               <iconset>
-                <normaloff>../images/usb-pendrive.png</normaloff>../images/usb-pendrive.png</iconset>
+               <iconset resource="../images/icon_png.qrc">
+                <normaloff>:/icon/world.png</normaloff>:/icon/world.png</iconset>
               </property>
               <property name="iconSize">
                <size>
@@ -571,8 +571,8 @@ text-align: left;</string>
       </widget>
       <widget class="QWidget" name="guide_user">
        <attribute name="icon">
-        <iconset>
-         <normaloff>../images/user (1).png</normaloff>../images/user (1).png</iconset>
+        <iconset resource="../images/icon_png.qrc">
+         <normaloff>:/icon/user (1).png</normaloff>:/icon/user (1).png</iconset>
        </attribute>
        <attribute name="title">
         <string/>
@@ -826,8 +826,8 @@ text-align: left;</string>
       </widget>
       <widget class="QWidget" name="guide_github">
        <attribute name="icon">
-        <iconset>
-         <normaloff>../images/github (1) - 副本.png</normaloff>../images/github (1) - 副本.png</iconset>
+        <iconset resource="../images/icon_png.qrc">
+         <normaloff>:/icon/github (1) - 副本.png</normaloff>:/icon/github (1) - 副本.png</iconset>
        </attribute>
        <attribute name="title">
         <string/>
@@ -958,8 +958,8 @@ text-align: left;</string>
       </widget>
       <widget class="QWidget" name="guide_phone">
        <attribute name="icon">
-        <iconset>
-         <normaloff>../images/viber - 副本 (2).png</normaloff>../images/viber - 副本 (2).png</iconset>
+        <iconset resource="../images/icon_png.qrc">
+         <normaloff>:/icon/viber - 副本 (2).png</normaloff>:/icon/viber - 副本 (2).png</iconset>
        </attribute>
        <attribute name="title">
         <string/>
@@ -967,8 +967,8 @@ text-align: left;</string>
       </widget>
       <widget class="QWidget" name="guide_power">
        <attribute name="icon">
-        <iconset>
-         <normaloff>../images/power - 副本.png</normaloff>../images/power - 副本.png</iconset>
+        <iconset resource="../images/icon_png.qrc">
+         <normaloff>:/icon/power - 副本.png</normaloff>:/icon/power - 副本.png</iconset>
        </attribute>
        <attribute name="title">
         <string/>
@@ -990,6 +990,8 @@ text-align: left;</string>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="../images/icon_png.qrc"/>
+ </resources>
  <connections/>
 </ui>

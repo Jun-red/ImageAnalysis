@@ -17,6 +17,10 @@ sys.path.append(os.path.join(PROJ_DIR, 'images'))
 
 from GuideUI import guide
 
+'''
+    vi Ui_Guide.py [+] -> from images import icon_png_rc
+    vi Ui_Video.py [+] -> from images import icon_png_rc
+'''
 
 if __name__ == '__main__':
     print('Weclome to MAIN')
