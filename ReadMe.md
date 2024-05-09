@@ -32,6 +32,10 @@
 
 ## graphics view framework
     https://zhuanlan.zhihu.com/p/75662728
+    https://www.pythonguis.com/tutorials/pyqt-qgraphics-vector-graphics/
+    https://www.cnblogs.com/zhiyiYo/p/15676079.html
+    https://blog.csdn.net/qq_29912325/article/details/106900309
+
 ### SceneRect
     https://blog.csdn.net/Staranywhere/article/details/88368877
 
@@ -42,7 +46,6 @@
     https://blog.csdn.net/guanguanboy/article/details/103636943
 
 ## pyinstaller 
-
 ### "The git executable must be specified..."
     https://blog.csdn.net/JiuShu110/article/details/132872982
 ### ICON

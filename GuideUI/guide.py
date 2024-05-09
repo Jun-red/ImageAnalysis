@@ -29,6 +29,14 @@ class Guide(qw.QMainWindow, Ui_Guide.Ui_MainWindow):
 
         self.CB()
         self.Init()
+        self.resizeToDesktop()
+
+    def resizeToDesktop(self):
+        desktop = qw.QApplication.desktop()
+        rect = desktop.availableGeometry(self) 
+        new_width = rect.width() // 1.5
+        new_height = rect.height() // 1.5
+        self.setGeometry(rect.x(), rect.y(), new_width, new_height)
 
     def Init(self):
         self.guide_user_login.setStyleSheet("background-color: red;")
@@ -39,7 +47,7 @@ class Guide(qw.QMainWindow, Ui_Guide.Ui_MainWindow):
         changelog_path = r'C:\Users\12284\Desktop\GitHub\ImageAnalysis\ChangeLog.md'
         self.mygit = mygit.MyGitManager(repo_path, branch_name, changelog_path)
 
-        self.guide_github_url.setText(str(self.mygit.repo_path))
+        # self.guide_github_url.setText(str(self.mygit.repo_path))
         self.guide_github_branch.setText(str(self.mygit.branch_name))
         self.guide_github_version.setText(str(self.mygit.changelog))
         

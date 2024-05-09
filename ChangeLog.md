@@ -1,6 +1,10 @@
 
 # Version
 
+## version:[0.0.6] date:2024-05-10
+[+] Add image scaling logic
+[+] Add logic to automatically adjust the UI size according to the desktop
+
 ## version:[0.0.5] date:2024-05-09
 [!] Fix the bug of running feedback git
 [!] Fix the bug that no icon is displayed when running
