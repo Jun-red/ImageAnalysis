@@ -1,6 +1,10 @@
 
 # Version
 
+## version:[0.0.4] date:2024-05-09
+[*] Determine the UI of the video project
+[!] Try using the QT graphics framework
+
 ## version:[0.0.3] date:2024-05-06
 [*] Optimize the operation logic of the click interface
 [+] add .gitignore

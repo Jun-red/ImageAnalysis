@@ -4,6 +4,8 @@ import PyQt5.QtCore as qc
 
 from DesignerUI.PyUI import Ui_Guide
 from GuideUI.LoginUI import login
+from FunctionalUI.VideoAnalysis import video_interface
+
 from common import TimeChange
 from script import mygit
 
@@ -14,6 +16,7 @@ class Guide(qw.QMainWindow, Ui_Guide.Ui_MainWindow):
         self.setupUi(self)  
 
         self.login = login.Login()
+        self.video = video_interface.MyVideo()
         self.function_set= [0] * 5 # video image lidar serial network         
 
         self.guide_switch = {
@@ -54,6 +57,8 @@ class Guide(qw.QMainWindow, Ui_Guide.Ui_MainWindow):
         self.guide_user_login.clicked.connect(self.on_guide_user_login_in_cb)
         self.login.login_flag.connect(self.on_guide_flag_cb)
         self.login.login_time.connect(self.on_guide_time_cb)
+
+        self.video.interface_exit_flag.connect(self.on_video_interface_exit_cb)
     def on_guide_cb(self):
         cur_tab = self.guide.currentIndex()
         self.guide_switch.get(cur_tab)()
@@ -82,10 +87,14 @@ class Guide(qw.QMainWindow, Ui_Guide.Ui_MainWindow):
             ret = not ret
         return ret
     def on_guide_video_cb(self):
-        if  not self.FunctionClickedEvent():
-            return
-        else:
-            self.function_set[0] = 1
+        ### DEBUG 模式 先无需登录
+        # if  not self.FunctionClickedEvent():
+        #     return
+        # else:
+        #     self.function_set[0] = 1
+        #     self.video.show()
+        self.video.show()
+
     def on_guide_image_cb(self):
         if  not self.FunctionClickedEvent():
             return
@@ -125,3 +134,9 @@ class Guide(qw.QMainWindow, Ui_Guide.Ui_MainWindow):
     def on_guide_time_cb(self, value):
         str_time = TimeChange.seconds_to_hms(value)
         self.guide_user_time.setText(str_time)
+    
+    # <Video 功能区域>
+    def on_video_interface_exit_cb(self, value):
+        ''' 界面关闭了 '''
+        if not value:
+            self.function_set[0] = 0

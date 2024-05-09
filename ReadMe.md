@@ -27,6 +27,20 @@
 ## QLineEdit 样式表configure
     https://blog.csdn.net/qq_21449473/article/details/104020101
 
+## Containers
+    https://blog.csdn.net/qq_45769063/article/details/121492249
+
+## graphics view framework
+    https://zhuanlan.zhihu.com/p/75662728
+### SceneRect
+    https://blog.csdn.net/Staranywhere/article/details/88368877
+
+## tree widget
+    https://blog.csdn.net/youcans/article/details/120834085
+
+## QT界面--如何调整控件在整个界面中所占的比例
+    https://blog.csdn.net/guanguanboy/article/details/103636943
+
 ## icons
     https://www.flaticon.com/
     https://www.iconfinder.com/
