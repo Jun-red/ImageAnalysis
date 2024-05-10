@@ -1,6 +1,13 @@
 
 # Version
 
+## version:[0.0.8] date:2024-05-10
+[!] Fix the bug that the icon cannot be switched
+[+] opencv
+
+## version:[0.0.7] date:2024-05-10
+[+] Added UI design and logic implementation of the save interface
+
 ## version:[0.0.6] date:2024-05-10
 [+] Add image scaling logic
 [+] Add logic to automatically adjust the UI size according to the desktop

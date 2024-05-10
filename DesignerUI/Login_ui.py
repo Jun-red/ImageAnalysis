@@ -21,7 +21,7 @@ class Ui_Form(object):
         self.label.setGeometry(QtCore.QRect(90, 30, 121, 111))
         self.label.setText("")
         self.label.setTextFormat(QtCore.Qt.AutoText)
-        self.label.setPixmap(QtGui.QPixmap("c:\\Users\\12284\\Desktop\\GitHub\\ImageAnalysis\\DesignerUI\\../images/rocket_48x48.png"))
+        self.label.setPixmap(QtGui.QPixmap(":/icon/rocket_48x48.png"))
         self.label.setScaledContents(True)
         self.label.setWordWrap(True)
         self.label.setObjectName("label")
@@ -90,3 +90,4 @@ class Ui_Form(object):
         self.login_password.setPlaceholderText(_translate("Form", " input password"))
         self.login_in.setText(_translate("Form", "Login"))
         self.login_register.setText(_translate("Form", "Register"))
+import icon_png_rc

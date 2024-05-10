@@ -35,7 +35,7 @@
     https://www.pythonguis.com/tutorials/pyqt-qgraphics-vector-graphics/
     https://www.cnblogs.com/zhiyiYo/p/15676079.html
     https://blog.csdn.net/qq_29912325/article/details/106900309
-
+    https://zhuanlan.zhihu.com/p/648785871
 ### SceneRect
     https://blog.csdn.net/Staranywhere/article/details/88368877
 

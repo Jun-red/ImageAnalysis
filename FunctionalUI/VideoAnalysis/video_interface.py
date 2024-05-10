@@ -11,7 +11,11 @@ from PyQt5.QtGui import QPainter, QPixmap, QWheelEvent
 from PyQt5.QtWidgets import (QApplication, QGraphicsItem, QGraphicsPixmapItem,
                              QGraphicsScene, QGraphicsView)
 
+
+
 from DesignerUI.PyUI import Ui_Video
+from FunctionalUI.VideoAnalysis import video_save
+from FunctionalUI.VideoAnalysis import producer
 
 class MyVideo(qw.QMainWindow, Ui_Video.Ui_MainWindow):
 
@@ -24,7 +28,7 @@ class MyVideo(qw.QMainWindow, Ui_Video.Ui_MainWindow):
         self.resizeToDesktop()
         self.init()
 
-        self.test()
+        # self.test()
     
     def init(self):
         # 缩放
@@ -40,14 +44,76 @@ class MyVideo(qw.QMainWindow, Ui_Video.Ui_MainWindow):
         self.box1_user.addAction(self.login_button)
         self.login_button.triggered.connect(lambda: self.LoginArea(0))
 
-        # 为设备连接更改图标
-        self.box1_connection_status.setDisabled(False) # 默认是断开状态
-
-        # 为开始操作/结束操作更改图标
-        self.box1_power.setDisabled(False)
-
         # 为树形导航绑定槽函数
         self.box2_tree.itemClicked.connect(self.on_box2_tree_cb)
+
+        # 禁止用户操作box5-6
+        # self.box5_control.currentChanged.connect(self.on_box5_change_page_cb)
+        # self.box6_sub_interface.currentChanged.connect(self.on_box6_change_page_cb)
+
+        self.box5_switch = {
+            "图像翻转": 0,
+            "提取ROI": 1,
+            "编码设置": 2,
+            "视频传输": 3,
+            "目标检测": 4,
+            "场景分割": 5,
+            "目标跟踪": 6,
+        }
+        self.box6_switch = {
+            "SubImageDisplay": 0,
+            "Console": 1,
+        }
+
+        self.box1_clieck_flag = False
+
+        self.save_ui_is_show_flag = False
+        self.save_ui = video_save.MySave()
+        self.box1_power.clicked.connect(self.on_box1_power_cb)
+        self.box1_save.clicked.connect(self.on_box1_save_cb)
+        self.save_ui.save_data.connect(self.on_save_ui_show_cb)
+
+        self.GraphicsInit()
+
+        # thread
+        self.video_producer = producer.Producer()
+        
+
+    def on_box1_power_cb(self):
+
+        if not self.box1_clieck_flag:
+            # ret = self.box5_control.setCurrentIndex(0) if self.tt_flag else self.box5_control.setCurrentIndex(1)
+            # self.tt_flag = not self.tt_flag
+            # print(self.tt_flag)
+            # self.video_producer.start()
+           
+            self.box1_power.setChecked(True)
+            self.box1_connection_status.setChecked(True)
+        
+        else:
+            # self.video_producer.stop()
+            self.box1_power.setChecked(False)
+            self.box1_connection_status.setChecked(False)
+
+        self.box1_clieck_flag = not self.box1_clieck_flag
+    def on_box1_save_cb(self):
+        if self.save_ui_is_show_flag :
+            return
+        self.save_ui_is_show_flag = True
+        self.save_ui.show()
+        
+    def on_save_ui_show_cb(self,v_p, v_t, v_m, v_m_d):
+        if self.save_ui_is_show_flag:
+            self.save_ui_is_show_flag = False
+            self.save_ui.close()
+            print('1------------------------------------------')
+            print(v_p)
+            print(v_t)
+            print(v_m)
+            print(v_m_d)
+            print('------------------------------------------')
+
+            
 
     def on_box2_tree_cb(self, item, column):
         ''' 
@@ -85,13 +151,19 @@ class MyVideo(qw.QMainWindow, Ui_Video.Ui_MainWindow):
     
     def closeEvent(self, event):
         self.interface_exit_flag.emit(False)
+        self.video_producer.stop()
         event.accept()
 
-    def test(self):
+    def GraphicsInit(self):
         self.AnchorUnderMouse = qw.QGraphicsView.AnchorUnderMouse
-
         self.graphicsScene = qw.QGraphicsScene()
-        self.pixmap = qg.QPixmap(r'C:\Users\12284\Desktop\GitHub\ImageAnalysis\images\img0.jpg')
+        # self.box4_graphics.setScene(self.graphicsScene)
+    def test(self, frame):
+        
+        
+        
+        # self.pixmap = qg.QPixmap(r'C:\Users\12284\Desktop\GitHub\ImageAnalysis\images\img0.jpg')
+        self.pixmap = qg.QPixmap(frame)
         self.pixmapItem = qw.QGraphicsPixmapItem(self.pixmap)
 
         ratio = self.__getScaleRatio()
@@ -111,6 +183,7 @@ class MyVideo(qw.QMainWindow, Ui_Video.Ui_MainWindow):
                             qg.QPainter.SmoothPixmapTransform)
 
         # 设置场景
+
         self.graphicsScene.addItem(self.pixmapItem)
         self.box4_graphics.setScene(self.graphicsScene)
     # --------------------------------------------------------------------------------------- #
@@ -203,8 +276,7 @@ class MyVideo(qw.QMainWindow, Ui_Video.Ui_MainWindow):
             self.zoomIn()  # 放大图像
         else:
             self.zoomOut()  # 缩小图像
-        # self.box4_graphics.scale(self.scale_factor, self.scale_factor)  # 缩放视图
-        # self.scale
 
+    
 
     

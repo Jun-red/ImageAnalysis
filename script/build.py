@@ -5,7 +5,8 @@ if __name__ == '__main__':
     opts = [
         '--onefile',
         '--windowed',
-        '--icon=../images/logo.jpg',
-        '../main.py'
+        '--icon=C:\\Users\\12284\\Desktop\\GitHub\\ImageAnalysis\\images\\china.png',
+        'C:\\Users\\12284\\Desktop\\GitHub\\ImageAnalysis\\main.py'
     ]
     sys.exit(run(opts))
+        

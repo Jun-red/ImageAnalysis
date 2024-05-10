@@ -41,7 +41,7 @@
     <enum>Qt::AutoText</enum>
    </property>
    <property name="pixmap">
-    <pixmap>../images/rocket_48x48.png</pixmap>
+    <pixmap resource="../images/icon_png.qrc">:/icon/rocket_48x48.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -181,6 +181,8 @@ padding: 0 8px;</string>
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../images/icon_png.qrc"/>
+ </resources>
  <connections/>
 </ui>
