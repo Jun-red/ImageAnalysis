@@ -21,9 +21,9 @@ class Login(qw.QMainWindow, Ui_Login.Ui_Form):
         # self.login_user_passworld = ""
     
     def StartTimer(self, timeout):
-        self.timer = qc.QTimer(self)
-        self.timer.timeout.connect(self.UpdateTimer) 
-        self.timer.start(timeout)  # 每隔1000毫秒（即1秒）触发一次定时器
+        # self.timer = qc.QTimer(self)
+        # self.timer.timeout.connect(self.UpdateTimer) 
+        # self.timer.start(timeout)  # 每隔1000毫秒（即1秒）触发一次定时器
         self.counter = 0 
     
     def UpdateTimer(self):

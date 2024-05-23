@@ -15,7 +15,8 @@ class Producer(threading.Thread):
         '''
           线程处理
         '''
-        self.video_capture = cv2.VideoCapture(1)
+        self.Stop()
+        # self.video_capture = cv2.VideoCapture(1)
         while self.ThreadRun:
             ret, frame = self.video_capture.read()
             if not ret:
@@ -30,11 +31,8 @@ class Producer(threading.Thread):
             # bytes_per_line = ch * w
             # q_img = qg.QImage(frame.data, w, h, bytes_per_line, QImage.Format_RGB888)
             # pixmap = QPixmap.fromImage(q_img)
-   
-           
 
-        print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-        print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-
-    def stop(self):
+    def Stop(self):
         self.ThreadRun = False
+    def Start(self):
+        self.start()

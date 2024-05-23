@@ -29,3 +29,8 @@ if __name__ == '__main__':
     mainUI = guide.Guide()
     mainUI.show()
     sys.exit(app.exec_())
+
+
+
+
+

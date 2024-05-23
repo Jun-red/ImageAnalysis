@@ -102,6 +102,11 @@ class Guide(qw.QMainWindow, Ui_Guide.Ui_MainWindow):
         #     self.function_set[0] = 1
         #     self.video.show()
         self.video.show()
+        try:
+            self.video.Start()
+        except:
+            print("尝试打开线程失败")
+            pass
 
     def on_guide_image_cb(self):
         if  not self.FunctionClickedEvent():

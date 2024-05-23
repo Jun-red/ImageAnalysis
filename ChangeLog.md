@@ -1,6 +1,9 @@
 
 # Version
 
+## version:[0.0.9] date:2024-05-23
+[+] tools\study\splitter_2.py  以及 tools\study\splitter.py  增加了分裂器的学习,可以自由拖拽边界了
+
 ## version:[0.0.8] date:2024-05-10
 [!] Fix the bug that the icon cannot be switched
 [+] opencv
