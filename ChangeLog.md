@@ -1,6 +1,9 @@
 
 # Version
 
+## version:[0.0.10] date:2024-05-24
+[+] tools\study\tab_position.py  以及 tools\study\qstatusbar.py增加tab 和 QStatus的学习
+
 ## version:[0.0.9] date:2024-05-23
 [+] tools\study\splitter_2.py  以及 tools\study\splitter.py  增加了分裂器的学习,可以自由拖拽边界了
 

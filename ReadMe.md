@@ -56,4 +56,16 @@
     https://www.iconfinder.com/
     https://fontawesome.com/
 
+## QMenuBar  QToolBar  QStatusBar
+    https://www.cnblogs.com/ygzhaof/p/10070523.html
 
+## qrc
+    https://blog.csdn.net/qq_40789719/article/details/134030989
+
+## 貌似QMenuBar 不能同时添加Icon与title
+    https://tieba.baidu.com/p/5164699922
+
+## QToolBar 的使用
+    https://blog.csdn.net/2201_75470901/article/details/136077987
+
+    在该博客中，好像是将新建的动作编辑器拖到ToolBar中
